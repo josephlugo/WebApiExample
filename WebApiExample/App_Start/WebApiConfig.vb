@@ -12,7 +12,7 @@ Public Module WebApiConfig
 
         'Changed the default calling behavior to as this example:
         'http://localhost:63105/api/Products/GetAllProductsBySameID/1
-        '{action} was introduced in the pattern
+        '{action} was introduced in the string pattern
 
         config.Routes.MapHttpRoute(
             name:="DefaultApi",
