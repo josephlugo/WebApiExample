@@ -10,7 +10,7 @@ Public Module WebApiConfig
         ' Web API routes
         config.MapHttpAttributeRoutes()
 
-        'Changed the default calling behavior introducing {action} in the string calling pattern. 
+        'Changed the default calling behavior introducing {action} in the string calling pattern
         'This way the Web API methods can be called separately as on this example:
         'http://localhost:63105/api/Products/GetAllProductsBySameID/1
 
