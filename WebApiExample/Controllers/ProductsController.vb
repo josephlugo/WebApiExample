@@ -7,25 +7,25 @@ Namespace Controllers
 
         'Initializing an example list of products
         Dim products As Product() = {
-        New Product() With {
-        .Id = 1,
-        .Name = "Tomatoe Sauce",
-        .Category = "Groceries",
-        .Price = 1
-        },
-        New Product() With {
-        .Id = 2,
-        .Name = "Ping pong table",
-        .Category = "Toys",
-        .Price = 8.75
-        },
-        New Product() With {
-        .Id = 1,
-        .Name = "Monitor",
-        .Category = "Hardware",
-        .Price = 199.99
-    }
-}
+                                        New Product() With {
+                                        .Id = 1,
+                                        .Name = "Tomatoe Sauce",
+                                        .Category = "Groceries",
+                                        .Price = 1
+                                        },
+                                        New Product() With {
+                                        .Id = 2,
+                                        .Name = "Ping pong table",
+                                        .Category = "Toys",
+                                        .Price = 8.75
+                                        },
+                                        New Product() With {
+                                        .Id = 1,
+                                        .Name = "Monitor",
+                                        .Category = "Hardware",
+                                        .Price = 199.99
+                                        }
+                                    }
         ' GET: api/Products
         Public Function GetAllProducts() As IEnumerable(Of Product)
             Return products
