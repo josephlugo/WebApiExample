@@ -2,7 +2,7 @@
 Imports System.Net.Http.Headers
 Imports Newtonsoft.Json
 
-'Idea taken from: http://stackoverflow.com/questions/9847564/how-do-i-get-asp-net-web-api-to-return-json-instead-of-xml-using-chrome/20556625#20556625
+'Concept taken from: http://stackoverflow.com/questions/9847564/how-do-i-get-asp-net-web-api-to-return-json-instead-of-xml-using-chrome/20556625#20556625
 
 Public Class BrowserJsonFormatter
     Inherits JsonMediaTypeFormatter
