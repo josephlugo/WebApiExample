@@ -40,7 +40,7 @@ Namespace Controllers
                                     }
         ' GET example: http://localhost:63105/api/Products/GetAllProducts
         ''' <summary>
-        ''' Get all registered products from the list.
+        ''' Gets all registered products from the list.
         ''' </summary>
         ''' <returns></returns>
         Public Function GetAllProducts() As IEnumerable(Of Product)
