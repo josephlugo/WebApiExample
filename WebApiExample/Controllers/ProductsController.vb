@@ -20,19 +20,37 @@ Namespace Controllers
                                         .Price = 8.75
                                         },
                                         New Product() With {
-                                        .Id = 1,
-                                        .Name = "Monitor",
+                                        .Id = 3,
+                                        .Name = "DELL Monitor",
+                                        .Category = "Hardware",
+                                        .Price = 199.99
+                                        },
+                                        New Product() With {
+                                        .Id = 4,
+                                        .Name = "Keyboard",
+                                        .Category = "Hardware",
+                                        .Price = 14.99
+                                        },
+                                         New Product() With {
+                                        .Id = 5,
+                                        .Name = "NOC Monitor",
                                         .Category = "Hardware",
                                         .Price = 199.99
                                         }
                                     }
-        ' GET: api/Products
+        ' GET example: http://localhost:63105/api/Products/GetAllProducts
         Public Function GetAllProducts() As IEnumerable(Of Product)
             Return products
         End Function
 
-
+        ' GET example: http://localhost:63105/api/Products/GetFirstProduct/1
+        ''' <summary>
+        ''' Gets the first registered product under the specified ID parameter.
+        ''' </summary>
+        ''' <param name="id"></param>
+        ''' <returns></returns>
         Public Function GetFirstProduct(ByVal id As Integer) As IHttpActionResult
+
 
             Dim product As Product = products.FirstOrDefault(Function(p) p.Id = id)
 
@@ -44,8 +62,26 @@ Namespace Controllers
 
         End Function
 
-        Public Function GetAllProductsBySameID(ByVal id As Integer) As IEnumerable(Of Product)
-            Return products.Where(Function(p) p.Id = id)
+        ' GET example: http://localhost:63105/api/Products/GetProductsByPrice?price=199.99
+        ''' <summary>
+        ''' Gets all the registered products with the specified price.
+        ''' </summary>
+        ''' <param name="price"></param>
+        ''' <returns></returns>
+        Public Function GetProductsByPrice(ByVal price As Decimal) As IEnumerable(Of Product)
+            Return products.Where(Function(p) p.Price = price)
+        End Function
+
+        ' GET example: http://localhost:63105/api/Products/GetAllProducts?category=Hardware&price=199.99
+
+        ''' <summary>
+        ''' Gets all the registered products under the same Price and Category.
+        ''' </summary>
+        ''' <param name="category"></param>
+        ''' <param name="price"></param>
+        ''' <returns></returns>
+        Public Function GetAllProducts(ByVal category As String, ByVal price As Decimal) As IEnumerable(Of Product)
+            Return products.Where(Function(p) p.Category = category And p.Price = price)
         End Function
 
     End Class
