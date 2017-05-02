@@ -18,11 +18,11 @@ Public Module WebApiConfig
             defaults:=New With {.id = RouteParameter.Optional}
         )
 
-        'Get JSON format
-        config.Formatters.Add(New BrowserJsonFormatter())
-
         'Get HTML format
-        'config.Formatters.JsonFormatter.SupportedMediaTypes.Add(New MediaTypeHeaderValue("text/html"))
+        config.Formatters.JsonFormatter.SupportedMediaTypes.Add(New MediaTypeHeaderValue("text/html"))
+
+        'Get JSON format
+        'config.Formatters.Add(New BrowserJsonFormatter())
 
         'To generate Web API documentation:
         '1. Open Nuget Package Manager, look up for "Microsoft.AspNet.WebApi.HelpPage.VB" And install it.
